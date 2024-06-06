@@ -1,7 +1,7 @@
 <?php require_once('Connections/album.php'); ?>
 <?php
 if (!function_exists("GetSQLValueString")) {
-function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
+function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "")
 {
   if (PHP_VERSION < 6) {
     $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
@@ -12,7 +12,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
   switch ($theType) {
     case "text":
       $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;    
+      break;
     case "long":
     case "int":
       $theValue = ($theValue != "") ? intval($theValue) : "NULL";
@@ -50,11 +50,11 @@ $totalRows_Recordset1 = mysql_num_rows($Recordset1);
     <td align="center"><span style="font-family: '微軟正黑體'; font-size: 24px">網路相簿</span></td>
   </tr>
 </table>
-<hr /> 
+<hr />
 <table width="500" border="0" align="center" cellpadding="0">
   <tr>
     <td align="center">
-    
+
       <table >
         <tr>
           <?php

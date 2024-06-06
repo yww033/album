@@ -1,7 +1,7 @@
 <?php require_once('Connections/album.php'); ?>
 <?php
 if (!function_exists("GetSQLValueString")) {
-function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
+function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "")
 {
   if (PHP_VERSION < 6) {
     $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
@@ -12,7 +12,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
   switch ($theType) {
     case "text":
       $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;    
+      break;
     case "long":
     case "int":
       $theValue = ($theValue != "") ? intval($theValue) : "NULL";
@@ -139,7 +139,7 @@ do {
           <td><table width="400" border="0" align="center">
             <tr>
               <td align="center" valign="middle">
-            
+
                 <label for="Comment[]"></label>
                 <input name="Comment[]" type="text" id="Comment[]" value="<?php echo $row_Recordset1['Comment']; ?>" /></td>
             </tr>

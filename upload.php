@@ -2,7 +2,7 @@
 <?php
 include("resize.php");
 if (!function_exists("GetSQLValueString")) {
-function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
+function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "")
 {
   if (PHP_VERSION < 6) {
     $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
@@ -13,7 +13,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
   switch ($theType) {
     case "text":
       $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;    
+      break;
     case "long":
     case "int":
       $theValue = ($theValue != "") ? intval($theValue) : "NULL";
@@ -39,7 +39,7 @@ if (isset($_SERVER['QUERY_STRING'])) {
 
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
 	$countNum=count($_POST['Comment']);
-for($i=0; $i<$countNum; $i++) { 
+for($i=0; $i<$countNum; $i++) {
 if($_FILES['Photo']['name'][$i]!="")    {
 	if($_FILES['Photo']['error'][$i]>0){
 		echo '檔案名稱:'.$_FILES['Photo']['name'][$i].'<br>';
@@ -53,12 +53,12 @@ if($_FILES['Photo']['name'][$i]!="")    {
 		$destDir ="photos";
 		if(!is_dir($destDir) || !is_writeable($destDir))
 		die("目錄不存在或無法寫入");
-		
+
 		//檔案格式判斷 jpg gif png
 		$checkExt =getimagesize($_FILES['Photo']['tmp_name'][$i]);
 		if($checkExt[2] == NULL)
 		die("檔案格式不符");
-		
+
 		//取得副檔名 $Ext
 		switch($checkExt[2]){
 			case 1:$Ext ="gif"; break;
@@ -131,12 +131,12 @@ $Num=$_GET['Num'];
     <tr>
       <td colspan="2"><label for="Photo[]"></label>
         <input name="MAX_FILE_SIZE" type="hidden" id="hiddenField" value="2000000" />
-      <input name="Photo[]" type="file" id="Photo[]" size="40" /></td> 
+      <input name="Photo[]" type="file" id="Photo[]" size="40" /></td>
     </tr>
     <tr>
       <td colspan="2">說明:
         <label for="Comment[]"></label>
-      <input type="text" name="Comment[]" id="Comment[]" /></td> 
+      <input type="text" name="Comment[]" id="Comment[]" /></td>
     </tr>
     <?php }?>
     <tr align="center" valign="middle">
@@ -145,7 +145,7 @@ $Num=$_GET['Num'];
       <label for="checkResize">縮圖為</label>
       <label for="px"></label>
       <input name="px" type="text" id="px" size="15" />
-      px 
+      px
       <input type="submit" name="button" id="button" value="送出" /></td>
     </tr>
   </table>
